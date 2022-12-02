@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('appsName');
             $table->string('appsDescription');
+            $table->string('appsLink');
             $table->integer('maxTotalRespondent');
             $table->date('maxDate');
             $table->integer('totalRespondent');

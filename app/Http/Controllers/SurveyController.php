@@ -15,6 +15,7 @@ class SurveyController extends Controller
         $validator = Validator::make($request->all(), [
             'appsName' => 'required|string|between:2,255',
             'appsDescription' => 'required|string|between:2,255',
+            'appsLink' => 'required|string|between:2,255',
             'maxTotalRespondent' => 'required|integer|between:2,255',
             'maxDate' => 'required|date',
             'totalRespondent' => 'required|integer|between:2,255',
@@ -55,6 +56,7 @@ class SurveyController extends Controller
         $validator = Validator::make($request->all(), [
             'appsName' => 'required|string|between:2,255',
             'appsDescription' => 'required|string|between:2,255',
+            'appsLink' => 'required|string|between:2,255',
             'maxTotalRespondent' => 'required|integer|between:2,255',
             'maxDate' => 'required|date',
             'totalRespondent' => 'required|integer|between:2,255',
