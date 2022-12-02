@@ -17,8 +17,4 @@ class Question extends Model
     {
         return $this->belongsTo(QuestionCategory::class);
     }
-    public function result()
-    {
-        return $this->hasMany(Result::class);
-    }
 }

@@ -15,12 +15,35 @@ return new class extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->id();
-            $table->integer('point');
+            $table->integer('q1');
+            $table->integer('q2');
+            $table->integer('q3');
+            $table->integer('q4');
+            $table->integer('q5');
+            $table->integer('q6');
+            $table->integer('q7');
+            $table->integer('q8');
+            $table->integer('q9');
+            $table->integer('q10');
+            $table->integer('q11');
+            $table->integer('q12');
+            $table->integer('q13');
+            $table->integer('q14');
+            $table->integer('q15');
+            $table->integer('q16');
+            $table->integer('q17');
+            $table->integer('q18');
+            $table->integer('q19');
+            $table->integer('q20');
+            $table->integer('q21');
+            $table->integer('q22');
+            $table->integer('q23');
+            $table->integer('q24');
+            $table->integer('q25');
+            $table->integer('q26');
             $table->timestamps();
             $table->unsignedBigInteger('survey_id');
             $table->foreign('survey_id')->references('id')->on('surveys');
-            $table->unsignedBigInteger('question_id');
-            $table->foreign('question_id')->references('id')->on('questions');
         });
     }
 

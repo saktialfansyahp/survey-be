@@ -11,9 +11,33 @@ class ResultController extends Controller
 {
     public function create(Request $request){
         $validator = Validator::make($request->all(), [
-            'point' => 'required|integer',
+            'q1' => 'required|integer',
+            'q2' => 'required|integer',
+            'q3' => 'required|integer',
+            'q4' => 'required|integer',
+            'q5' => 'required|integer',
+            'q6' => 'required|integer',
+            'q7' => 'required|integer',
+            'q8' => 'required|integer',
+            'q9' => 'required|integer',
+            'q10' => 'required|integer',
+            'q11' => 'required|integer',
+            'q12' => 'required|integer',
+            'q13' => 'required|integer',
+            'q14' => 'required|integer',
+            'q15' => 'required|integer',
+            'q16' => 'required|integer',
+            'q17' => 'required|integer',
+            'q18' => 'required|integer',
+            'q19' => 'required|integer',
+            'q20' => 'required|integer',
+            'q21' => 'required|integer',
+            'q22' => 'required|integer',
+            'q23' => 'required|integer',
+            'q24' => 'required|integer',
+            'q25' => 'required|integer',
+            'q26' => 'required|integer',
             'survey_id' => 'required|integer',
-            'question_id' => 'required|integer',
         ]);
         if($validator->fails()){
             return response()->json($validator->errors()->toJson(), 400);
@@ -27,14 +51,14 @@ class ResultController extends Controller
         ], 201);
     }
     public function getResult(){
-        $result = Question::with('result')->get();
+        $result = Result::all();
         return response()->json([
             'message' => 'Success',
             'data' => $result
         ],201);
     }
     public function getbyId($id){
-        $result = Question::with('result')->find($id);
+        $result = Result::find($id);
         if($result != null){
             return response()->json([
                 'message' => 'Success',
@@ -48,8 +72,32 @@ class ResultController extends Controller
     }
     public function update($id, Request $request){
         $validator = Validator::make($request->all(), [
-            'point' => 'required|integer',
-            'question_id' => 'required|integer',
+            'q1' => 'required|integer',
+            'q2' => 'required|integer',
+            'q3' => 'required|integer',
+            'q4' => 'required|integer',
+            'q5' => 'required|integer',
+            'q6' => 'required|integer',
+            'q7' => 'required|integer',
+            'q8' => 'required|integer',
+            'q9' => 'required|integer',
+            'q10' => 'required|integer',
+            'q11' => 'required|integer',
+            'q12' => 'required|integer',
+            'q13' => 'required|integer',
+            'q14' => 'required|integer',
+            'q15' => 'required|integer',
+            'q16' => 'required|integer',
+            'q17' => 'required|integer',
+            'q18' => 'required|integer',
+            'q19' => 'required|integer',
+            'q20' => 'required|integer',
+            'q21' => 'required|integer',
+            'q22' => 'required|integer',
+            'q23' => 'required|integer',
+            'q24' => 'required|integer',
+            'q25' => 'required|integer',
+            'q26' => 'required|integer',
             'survey_id' => 'required|integer',
         ]);
         if($validator->fails()){
@@ -58,7 +106,7 @@ class ResultController extends Controller
         $result = Result::find($id)->update(
             $validator->validated(),
         );
-        $result = Result::with('question')->find($id);
+        $result = Result::find($id);
         return response()->json([
             'message' => 'Survey successfully registered',
             'result' => $result
