@@ -37,8 +37,13 @@ class Result extends Model
         'q24',
         'q25',
         'q26',
+        'user_id',
         'survey_id',
     ];
+    public function user()
+    {
+        return $this->belongsTo(Survey::class);
+    }
     public function survey()
     {
         return $this->belongsTo(Survey::class);

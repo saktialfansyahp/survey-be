@@ -38,6 +38,7 @@ class ResultController extends Controller
             'q24' => 'required|integer',
             'q25' => 'required|integer',
             'q26' => 'required|integer',
+            'user_id' => 'required|integer',
             'survey_id' => 'required|integer',
         ]);
         if($validator->fails()){
@@ -112,6 +113,7 @@ class ResultController extends Controller
             'q24' => 'required|integer',
             'q25' => 'required|integer',
             'q26' => 'required|integer',
+            'user_id' => 'required|integer',
             'survey_id' => 'required|integer',
         ]);
         if($validator->fails()){
