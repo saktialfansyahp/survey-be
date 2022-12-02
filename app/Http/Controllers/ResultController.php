@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Result;
 use App\Models\Question;
 use Illuminate\Http\Request;
-use App\Models\Result;
 use Illuminate\Support\Facades\Validator;
 
 class ResultController extends Controller
@@ -59,6 +60,19 @@ class ResultController extends Controller
     }
     public function getbyId($id){
         $result = Result::find($id);
+        if($result != null){
+            return response()->json([
+                'message' => 'Success',
+                'data' => $result
+            ]);
+        }else if($result == null){
+            return response()->json([
+                'message' => 'Data not found'
+            ], 404);
+        }
+    }
+    public function getbyUserId($id){
+        $result = User::with('result')->find($id)->get();
         if($result != null){
             return response()->json([
                 'message' => 'Success',

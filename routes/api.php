@@ -45,6 +45,7 @@ Route::group([
     Route::post('/create', [ResultController::class, 'create']);
     Route::get('/getResult', [ResultController::class, 'getResult']);
     Route::get('/getResult/{id}', [ResultController::class, 'getbyId']);
+    Route::get('/getResultUser/{id}', [ResultController::class, 'getbyUserId']);
     Route::post('/update/{id}', [ResultController::class, 'update']);
     Route::delete('destroy/{id}', [ResultController::class, 'destroy']);
 });

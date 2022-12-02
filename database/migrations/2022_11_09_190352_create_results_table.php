@@ -42,6 +42,8 @@ return new class extends Migration
             $table->integer('q25');
             $table->integer('q26');
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('survey_id');
             $table->foreign('survey_id')->references('id')->on('surveys');
         });
